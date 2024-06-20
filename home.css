@@ -8,7 +8,8 @@ body {
 /* HEADER */
 header {
     position: fixed;
-    background-color: #333333a1; /* Fondo del encabezado */
+    z-index: 10;
+    background-color: #75019c; /* Fondo del encabezado */
     width: 100%;
     height: auto;
     padding: 10px 0;
