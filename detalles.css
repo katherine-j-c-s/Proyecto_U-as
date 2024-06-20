@@ -105,7 +105,7 @@
     width: 100%;
     position: relative;
     margin-top: 100px;
-    padding: 30px;
+    padding: 30px 0;
     text-align: center;
     background-color: #0000008c;
 }
@@ -120,11 +120,12 @@
 }
 .title h2{
     font-size: 40px;
-    top: -30px;
-    right: 40%;
+    top: 0px;
     position: absolute;
     color: white;
-    margin: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
     text-transform: uppercase;
     font-weight: 900;
 }
@@ -182,6 +183,10 @@ button{
     color: white;
     transition: 0.3s;
     cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 button:hover{
     background-color: #E859D9;
