@@ -1,12 +1,12 @@
 #boxDetalles{
     width: 100%;
+    height: 100vh;
     display: flex;
 }
 /*SECTION DE IMAGENES*/
 #box-carrousel{
     position: relative;
     width: 50%;
-    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,7 +94,6 @@
 /*SECTION DEL TEXTO DE DETALLE*/
 #box-detalle{
     width: 50%;
-    height: 80vh;
     background-image: url(./img/fondo_servicios_5.png);
     background-repeat: no-repeat;
     background-position: center;
