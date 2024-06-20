@@ -12,6 +12,7 @@ header {
     background-color: #75019c; /* Fondo del encabezado */
     width: 100%;
     height: auto;
+    top: 0;
     padding: 10px 0;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra en la parte inferior */
     border-bottom: 1px solid #ccc; /* Borde delgado en la parte inferior */

@@ -1,0 +1,102 @@
+#reservaTurno{
+    width: 30%;
+    height: 100vh;
+    padding-top: 60px;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra en la parte derecha */
+}
+.container-Opciones{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+.titulo{
+    font-size: 20px;
+    margin-left: 10px;
+    color: rgba(0, 0, 0, 0.677);
+    font-weight: 5400;
+}
+.opciones-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.opcion{
+    width: fit-content;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #0000002f;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+.opcion:hover{
+    background-color: #EF0483;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra en la parte inferior */ 
+    color: white;
+}
+.activado {
+    background-color: #EF0483;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    color: white;
+}
+form{
+    width: 100%;
+    margin: 0;
+}
+input{
+    width: 70%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: solid 1px #EF0483;
+    border-radius: 20px;
+}
+input:hover{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.monto{
+    display: flex;
+    align-items: baseline;
+}
+.precio{
+    font-size: 22px;
+    color: #EF0483;
+    margin-left: 5px;
+}
+.notareserva{
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 5px;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 16px;
+    border: solid 1px #74019C;
+}
+.metodoPago{
+    font-size: 12px;
+    color: #00000099;
+    width: 70%;
+    margin: 10px auto;
+    text-align: center;
+}
+button{
+    background-color: #EF0483;
+    padding: 12px 25px;
+    margin: 0 auto;
+    width: fit-content;
+    border: none;
+    border-radius: 22px;
+    font-size: 20px;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #E859D9;
+    color: rgb(5, 5, 5);
+}

@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="turnos.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,8 +15,44 @@
             <a href="./home.html#contact">Contacto</a>
         </nav>
     </header>
-    <section id="form">
-
-    </section>
+    <aside id="reservaTurno">
+        <div class="container-Opciones">
+            <h1 class="titulo">Su Servicio</h1>
+            <ul class="opciones-box">
+                <li class="opcion activado" data-id="0" >esculpidas soft gel</li>
+                <li class="opcion" data-id="1">esmaltado semipermamente</li>
+                <li class="opcion" data-id="2">kapping con poligel</li>
+                <li class="opcion" data-id="3">dipping con acrilico</li>
+                <li class="opcion" data-id="4">kapping base niveladora</li>
+            </ul>
+        </div>
+        <div class="container-Opciones">
+            <h1 class="titulo">Horario disponible por dia</h1>
+            <ul class="opciones-box">
+                <li class="opcion activado">16 hasta 17:30</li>
+                <li class="opcion">17:30 hasta 19</li>
+            </ul>
+        </div>
+        <div class="container-Opciones">
+            <h1 class="titulo">ahora llene los siguientes datos</h1>
+            <form>
+                <input placeholder="nombre y apellido" type="text">
+                <input placeholder="email" type="email">
+                <input placeholder="telefono" type="texto">
+            </form>
+        </div>
+        <div class="container-Opciones">
+            <div class="monto">
+                <h1 class="titulo">tu turno esta en este monto:</h1>
+                <h1 class="precio">8200$</h1>
+            </div>
+            <div class="notareserva">
+                <p>para completar con la reserva del turno, será necesario que page una seña del 50%</p>
+            </div>
+            <p class="metodoPago">metodo de pago SOLO es por mercado pago</p>
+            <button>pagar</button>
+        </div>
+    </aside>
+    <section></section>
 </body>
 </html>
