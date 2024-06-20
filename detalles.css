@@ -1,5 +1,6 @@
 #boxDetalles{
     width: 100%;
+    display: flex;
 }
 /*SECTION DE IMAGENES*/
 #box-carrousel{
@@ -92,5 +93,116 @@
 }
 /*SECTION DEL TEXTO DE DETALLE*/
 #box-detalle{
-    
+    width: 50%;
+    height: 80vh;
+    background-image: url(./img/fondo_servicios_5.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/*estilo del titulo*/
+.title{
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+    padding: 30px;
+    text-align: center;
+    background-color: #0000008c;
+}
+.title p{
+    font-size: 24px;
+    margin: 0;
+    bottom: -5px;
+    right: 40%;
+    position: absolute;
+    color: white;         
+    font-family: "Playwrite US Trad", cursive;
+}
+.title h2{
+    font-size: 40px;
+    top: -30px;
+    right: 40%;
+    position: absolute;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+/*estilo del texto de detalle*/
+.box-detalle-texto{
+    width: 45%;
+    background-color: white;
+    margin: 70px auto;
+    border-radius: 20px;
+    padding: 5px 44px 15px;
+}
+.box-detalle-texto h2{
+    font-weight: 900;
+}
+.box-detalle-texto h4{
+    color: #E859D9;         
+    font-family: "Playwrite US Trad", cursive;
+}
+/*SECTION AGENDAR TURNO*/
+#reservaTurno{
+    width: 100%;
+    background-color: #74019C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.agenda{
+    display: flex;
+    margin: 50px 0 20px;
+    text-align: center;
+    color: white;
+}
+.agenda h2{
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0;
+}
+.agenda h4{
+    color: #E859D9;        
+    margin: 0 0 20px 0; 
+    font-weight: 200;
+    font-family: "Playwrite US Trad", cursive;
+}
+.agenda p{
+    font-weight: 100;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.902);
+}
+button{
+    background-color: #EF0483;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 22px;
+    font-size: 20px;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #E859D9;
+    color: rgb(5, 5, 5);
+}
+.box-vector-detalles{
+    background-color: #EF0483;
+    padding: 10px;
+    margin: 5px;
+    transition: 0.3s;
+    border-radius: 40px;
+}
+.box-vector-detalles:hover{
+    background-color: #E859D9;
+    color: rgb(5, 5, 5);
+}
+.box-vector-detalles img{
+    width: 30px;
+    height: 30px;
+}
+.container-vectores-detalles{
+    display: flex;
+    margin-bottom: 20px;
 }
