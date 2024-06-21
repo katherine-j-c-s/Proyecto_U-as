@@ -19,18 +19,17 @@
         <div class="container-Opciones">
             <h1 class="titulo">Su Servicio</h1>
             <ul class="opciones-box">
-                <li class="opcion activado" data-id="0" >esculpidas soft gel</li>
-                <li class="opcion" data-id="1">esmaltado semipermamente</li>
-                <li class="opcion" data-id="2">kapping con poligel</li>
-                <li class="opcion" data-id="3">dipping con acrilico</li>
-                <li class="opcion" data-id="4">kapping base niveladora</li>
+                <li class="opcion" id="0" >esculpidas soft gel</li>
+                <li class="opcion" id="1">esmaltado semipermamente</li>
+                <li class="opcion" id="2">kapping con poligel</li>
+                <li class="opcion" id="3">dipping con acrilico</li>
+                <li class="opcion" id="4">kapping base niveladora</li>
             </ul>
         </div>
         <div class="container-Opciones">
             <h1 class="titulo">Horario disponible por dia</h1>
-            <ul class="opciones-box">
-                <li class="opcion activado">16 hasta 17:30</li>
-                <li class="opcion">17:30 hasta 19</li>
+            <ul class="opciones-box" id="horariosLista">
+                <!-- Las horas disponibles se agregarán aquí dinámicamente -->
             </ul>
         </div>
         <div class="container-Opciones">
@@ -53,6 +52,28 @@
             <button>pagar</button>
         </div>
     </aside>
-    <section></section>
+    <section id="calendario">
+        <h1>vamos a sacar su turno</h1>
+        <div class="inline"></div>
+        <p>seleccione el dia para sacar el turno</p>
+        <div class="agenda">
+            <!-- Días de la semana -->
+            <div class="semana-header">
+                <div>Dom</div>
+                <div>Lun</div>
+                <div>Mar</div>
+                <div>Mié</div>
+                <div>Jue</div>
+                <div>Vie</div>
+                <div>Sáb</div>
+            </div>
+            <!-- Calendario 7x5 -->
+            <div class="calendario-grid">
+                <!-- Aquí se insertarán los días con JavaScript -->
+            </div>
+        </div>
+    </section>
+    <script src="./turnos.js"></script>
+    <script src="./dataTurnos.js"></script>
 </body>
 </html>

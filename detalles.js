@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Actualizar las imágenes del carrusel
         const slides = document.querySelectorAll('.carousel .slide img');
+        const agendarReserva = document.getElementById("btnReserva");
+        agendarReserva.href = `turnos.html?id=${serviceId}`
         slides.forEach((img, index) => {
             img.src = servicio.imagenes[index];
         });
