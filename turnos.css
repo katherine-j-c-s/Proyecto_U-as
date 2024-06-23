@@ -8,6 +8,11 @@ body{
     padding-top: 60px;
     box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra en la parte derecha */
 }
+#textError{
+    width: 90%;
+    margin: auto;
+    font-size: 14px;
+}
 .container-Opciones{
     display: flex;
     flex-direction: column;
@@ -156,12 +161,11 @@ button:hover{
     border-radius: 35px;
     box-shadow: 0px 2px 4px #74019C;
 }
-
 .calendario-grid div {
     padding: 20px;
     text-align: center;
 }
-
+/*afectos para usar*/
 .activo {
     background-color: #EF0483;
     color: white;
@@ -170,4 +174,32 @@ button:hover{
 }
 .desactivo {
     color: #ccc;
+}
+/*FOOTER*/
+.box-vector-turnos{
+    background-color: #EF0483;
+    padding: 10px;
+    margin: 5px;
+    transition: 0.3s;
+    border-radius: 40px;
+}
+.box-vector-turnos:hover{
+    background-color: #E859D9;
+    color: rgb(5, 5, 5);
+}
+.box-vector-turnos img{
+    width: 30px;
+    height: 30px;
+}
+.container-vectores-turnos{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/*EFECTOS ERROR*/
+.error{
+    color: #ff0048;
+}
+.errorInputs {
+    border: solid 1px black;
 }

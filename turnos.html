@@ -27,17 +27,19 @@
             </ul>
         </div>
         <div class="container-Opciones">
-            <h1 class="titulo">Horario disponible por dia</h1>
+            <h1 class="titulo" id="horario">Horario disponible por dia</h1>
+            <div id="textError"></div>
             <ul class="opciones-box" id="horariosLista">
                 <!-- Las horas disponibles se agregarán aquí dinámicamente -->
             </ul>
         </div>
         <div class="container-Opciones">
-            <h1 class="titulo">ahora llene los siguientes datos</h1>
+            <h1 class="titulo" id="inputsTitle">ahora llene los siguientes datos</h1>
             <form>
-                <input placeholder="nombre y apellido" type="text">
-                <input placeholder="email" type="email">
-                <input placeholder="telefono" type="texto">
+                <input id="nombre" placeholder="nombre" type="text">
+                <input id="apellido" placeholder="apellido" type="text">
+                <input id="email" placeholder="email" type="email">
+                <input id="telefono" placeholder="telefono" type="texto">
             </form>
         </div>
         <div class="container-Opciones">
@@ -49,13 +51,13 @@
                 <p>para completar con la reserva del turno, será necesario que page una seña del 50%</p>
             </div>
             <p class="metodoPago">metodo de pago SOLO es por mercado pago</p>
-            <button>pagar</button>
+            <button onclick="sendForm()">pagar</button>
         </div>
     </aside>
     <section id="calendario">
         <h1>vamos a sacar su turno</h1>
         <div class="inline"></div>
-        <p>seleccione el dia para sacar el turno</p>
+        <p id="calendarioText">seleccione el dia para sacar el turno</p>
         <div class="agenda">
             <!-- Días de la semana -->
             <div class="semana-header">
@@ -72,8 +74,20 @@
                 <!-- Aquí se insertarán los días con JavaScript -->
             </div>
         </div>
+        <div class="container-vectores-turnos">
+            <div class="box-vector-turnos">
+                <a href="https://www.instagram.com/tucuenta" target="_blank"><img src="./img/instagram.png" alt="Instagram"></a>
+            </div>
+            <div class="box-vector-turnos" >
+                <a href="https://www.facebook.com/tucuenta" target="_blank"><img src="./img/facebook.png" alt="Facebook"></a>
+            </div>
+            <div class="box-vector-turnos" >
+                <a href="https://wa.me/tunumero" target="_blank"><img src="./img/whatsApp.png" alt="WhatsApp"></a>
+            </div>
+        </div>
     </section>
     <script src="./turnos.js"></script>
-    <script src="./dataTurnos.js"></script>
+    <script src="./turnosForms.js"></script>
+    <script src="./turnosData.js"></script>
 </body>
 </html>

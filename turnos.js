@@ -28,98 +28,110 @@ document.addEventListener('DOMContentLoaded', function() {
     const opcionesServicios = document.querySelectorAll('.container-Opciones:first-child .opciones-box .opcion');
     estadoOpcion(opcionesServicios,'.container-Opciones:first-child .opcion.activado')
 
-    // Seleccionamos todas las opciones de horarios para agregar un addEventListener por cada una de ellas
-    const opcionesHorarios = document.querySelectorAll('.container-Opciones:nth-child(2) .opciones-box .opcion');
-    estadoOpcion(opcionesHorarios,'.container-Opciones:nth-child(2) .opcion.activado')
-
     
     ////////////////////////////////////////////////////////////calendario////////////////////////////////////////////////////
-    // Crear una instancia de Date
-    const today = new Date();
-    const calendarioGrid = document.querySelector('.calendario-grid');
-    // optenemos el primer y ultimo día del mes actual
-    const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-    const lastDayOfMonth =  new Date(today.getFullYear(), today.getMonth() + 1, 0);
+// Crear una instancia de Date
+const today = new Date();
+today.setDate(25)
+const calendarioGrid = document.querySelector('.calendario-grid');
+// optenemos el primer y ultimo día del mes actual
+const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+const lastDayOfMonth =  new Date(today.getFullYear(), today.getMonth() + 1, 0);
 
-    // Obtener el día de la semana (0 = Domingo, 1 = Lunes, ..., 6 = Sábado)
-    let startDayOfWeek = firstDayOfMonth.getDay();
-    const lastDayOfWeekOfMonth = lastDayOfMonth.getDay();
+// Obtener el día de la semana (0 = Domingo, 1 = Lunes, ..., 6 = Sábado)
+let startDayOfWeek = firstDayOfMonth.getDay();
+const lastDayOfWeekOfMonth = lastDayOfMonth.getDay();
 
-    //ahora verifiquemos cuantos dias tiene el mes ,cual es su dia actual y los dias que restan para que acabe el mes
-    let cantDiasMes = lastDayOfMonth.getDate();
-    const diaActual = today.getDate()
-    const diasRestantes = cantDiasMes - diaActual
+//ahora verifiquemos cuantos dias tiene el mes ,cual es su dia actual y los dias que restan para que acabe el mes
+let cantDiasMes = lastDayOfMonth.getDate();
+const diaActual = today.getDate()
+const diasRestantes = cantDiasMes - diaActual
 
-    // Calcular el mes anterior
-    let previousMonth = (today.getMonth() === 0) ? 11 : today.getMonth() - 1; // Si es enero, el mes anterior es diciembre
-    let diasCalendario = 1;
-    const cantDiasEnCalendario = 42;//7x6 
-    if (diasRestantes <= 7) {
-        startDayOfWeek = today.getDay();
-        previousMonth = today.getMonth();
-        diasCalendario = diaActual;
-        let nextMonth = today.getMonth() + 1;
-        // Si el próximo mes es enero del próximo año
-        let firstDayNextMonth = nextMonth > 11 ? new Date(today.getFullYear() + 1, 0, 1) : new Date(today.getFullYear(), nextMonth, 1);
-    
-        // El último día del próximo mes
-        let lastDayNextMonth = new Date(firstDayNextMonth.getFullYear(), firstDayNextMonth.getMonth() + 1, 0);
-        cantDiasMes = lastDayNextMonth.getDate()
-    }
-    //si el dia no comenzo un domingo, entonces debemos buscar cuantos dias tenia el mes antior asi rellenamos
-    if (startDayOfWeek != 0) {
-        // Obtener la cantidad de días del mes anterior
-        const daysInPreviousMonth = new Date(today.getFullYear(), previousMonth + 1, 0).getDate();
-        let diasCalendarioMesAnterior = daysInPreviousMonth - (startDayOfWeek-1);
-        let disCalendarioSigMes = 1;
-        let terminoOtroMes = false
-        for (let day = 1; day <= cantDiasEnCalendario; day++) {
-            const dayDiv = document.createElement('div');
-            if (diasCalendarioMesAnterior <= daysInPreviousMonth) {
-                dayDiv.classList.add('desactivo');
+// Calcular el mes anterior
+let previousMonth = (today.getMonth() === 0) ? 11 : today.getMonth() - 1; // Si es enero, el mes anterior es diciembre
+let diasCalendario = 1;
+const cantDiasEnCalendario = 42;//7x6 
+if (diasRestantes <= 7) {
+    startDayOfWeek = today.getDay();
+    previousMonth = today.getMonth();
+    diasCalendario = diaActual;
+    let nextMonth = today.getMonth() - 2;
+    // Si el próximo mes es enero del próximo año
+    let firstDayNextMonth = nextMonth > 11 ? new Date(today.getFullYear() + 1, 0, 1) : new Date(today.getFullYear(), nextMonth, 1);
+    // El último día del próximo mes
+    let lastDayNextMonth = new Date(firstDayNextMonth.getFullYear(), firstDayNextMonth.getMonth() + 1, 0);
+    cantDiasMes = lastDayNextMonth.getDate()
+    console.log(nextMonth);
+}
+//si el dia no comenzo un domingo, entonces debemos buscar cuantos dias tenia el mes antior asi rellenamos
+if (startDayOfWeek != 0) {
+    // Obtener la cantidad de días del mes anterior
+    const daysInPreviousMonth = new Date(today.getFullYear(), previousMonth + 1, 0).getDate();
+    //esto lo creamos por que si faltan 7dias o menos, los dias del mes pasados son esos ultimos 7 dias de este mes
+    let diasCalendarioMesAnterior = daysInPreviousMonth - (startDayOfWeek-1);
+    let diasAnterior =  daysInPreviousMonth - (diasRestantes + startDayOfWeek ) 
+    let disCalendarioSigMes = 1;
+    let terminoOtroMes = false
+    for (let day = 1; day <= cantDiasEnCalendario; day++) {
+        const dayDiv = document.createElement('div');
+        //si los dias son del mes anterior, quedan descativados
+        if (diasCalendarioMesAnterior <= daysInPreviousMonth) {
+            dayDiv.classList.add('desactivo');
+            if (diasRestantes <= 7) {
+                dayDiv.textContent = diasAnterior;
+            }else{
                 dayDiv.textContent = diasCalendarioMesAnterior;
-                diasCalendarioMesAnterior++;
-            }else if (diasCalendario > cantDiasMes && diasRestantes > 7){
-                dayDiv.classList.add('desactivo');
-                dayDiv.textContent = disCalendarioSigMes;
-                disCalendarioSigMes++;
-            }else if (diasCalendario > cantDiasMes && diasRestantes <= 7){
-                if(disCalendarioSigMes > cantDiasMes){
-                    disCalendarioSigMes = 1;
-                    terminoOtroMes = true
-                }
-                if (terminoOtroMes) {
-                    dayDiv.classList.add('desactivo');
-                }
-                dayDiv.textContent = disCalendarioSigMes;
-                disCalendarioSigMes++;
-            }else if (diasCalendario <= cantDiasMes) {
-                if (diasCalendario === diaActual) {
-                    dayDiv.classList.add('activo');
-                }
-                if (diasCalendario < diaActual) {
-                    dayDiv.classList.add('desactivo');
-                }else {
-                    const turno = turnosDisponibles.find(turno => turno.dia === diasCalendario);
-                    if (!turno || turno.horas.length === 0) {
-                        dayDiv.classList.add('desactivo');
-                    } else {
-                        dayDiv.classList.add('dia-clickable');
-                        dayDiv.addEventListener('click', function() {
-                            seleccionarDia(dayDiv);
-                        });
-                    }
-                }
-                dayDiv.textContent = diasCalendario;
-                diasCalendario++;
             }
-            calendarioGrid.appendChild(dayDiv);
+            diasAnterior++;
+            diasCalendarioMesAnterior++;
+        }else if (diasCalendario > cantDiasMes && diasRestantes > 7){
+            //si los dias del mes se acabaron entonces empieza con el siguiente mes , pero desactivado
+            dayDiv.classList.add('desactivo');
+            dayDiv.textContent = disCalendarioSigMes;
+            disCalendarioSigMes++;
+        }else if (diasCalendario > cantDiasMes && diasRestantes <= 7){
+            if(disCalendarioSigMes > cantDiasMes && disCalendarioSigMes !== 31){
+                console.log(disCalendarioSigMes,cantDiasMes);
+                disCalendarioSigMes = 1;
+                terminoOtroMes = true
+            }
+            if (terminoOtroMes) {
+                dayDiv.classList.add('desactivo');
+            }
+            dayDiv.textContent = disCalendarioSigMes;
+            const turno = turnosDisponibles.find(turno => turno.dia === disCalendarioSigMes);
+            if (!turno || turno.horas.length === 0) {
+                dayDiv.classList.add('desactivo');
+            } else {
+                dayDiv.classList.add('dia-clickable');
+                dayDiv.addEventListener('click', function() {
+                    seleccionarDia(dayDiv);
+                });
+            }
+            disCalendarioSigMes++;
+        }else if (diasCalendario <= cantDiasMes) {
+            if (diasCalendario < diaActual) {
+                dayDiv.classList.add('desactivo');
+            }else {
+                const turno = turnosDisponibles.find(turno => turno.dia === diasCalendario);
+                if (!turno || turno.horas.length === 0) {
+                    dayDiv.classList.add('desactivo');
+                } else {
+                    dayDiv.classList.add('dia-clickable');
+                    dayDiv.addEventListener('click', function() {
+                        seleccionarDia(dayDiv);
+                    });
+                }
+            }
+            dayDiv.textContent = diasCalendario;
+            diasCalendario++;
         }
+        calendarioGrid.appendChild(dayDiv);
     }
-
+}
+    
     function seleccionarDia(diaDiv) {
         let diaSeleccionado = diaDiv.textContent;
-        console.log(diaSeleccionado);
         // Remover la clase activado del día previamente seleccionado
         const diaActivado = document.querySelector('.calendario-grid .activo');
         if (diaActivado) {
@@ -136,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const horariosLista = document.getElementById('horariosLista');
         horariosLista.innerHTML = ''; // Limpiar horarios anteriores
         
-        const turno = turnosDisponibles.find(turno => turno.dia === diaSeleccionado);
+        const turno = turnosDisponibles.find(turno => turno.dia === Number(diaSeleccionado));
 
         if (turno && turno.horas.length > 0) {
             turno.horas.forEach(hora => {
@@ -152,5 +164,10 @@ document.addEventListener('DOMContentLoaded', function() {
             li.textContent = 'No hay horarios disponibles';
             horariosLista.appendChild(li);
         }
+        
+        let opcionesHorarios = document.querySelectorAll('#horariosLista.opciones-box .opcion');
+        estadoOpcion(opcionesHorarios,'#horariosLista.opciones-box .opcion.activado')
+        let horarioError = document.querySelector("#textError .error")
+        horarioError.textContent = "";
     }
 });
