@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const serviceId = parseInt(urlParams.get('id'));
+    const serviceId = getUrlId()
 
     // Función para actualizar los elementos en la página de detalles
     function actualizarDetalles() {
@@ -17,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Actualizar las imágenes del carrusel
         const slides = document.querySelectorAll('.carousel .slide img');
-        const agendarReserva = document.getElementById("btnReserva");
-        agendarReserva.href = `turnos.html?id=${serviceId}`
+        
         slides.forEach((img, index) => {
             img.src = servicio.imagenes[index];
         });
@@ -27,3 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Llamar a la función para actualizar los detalles
     actualizarDetalles();
 });
+function getUrlId() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceId = parseInt(urlParams.get('id'));
+    return serviceId
+}
+function agendarReserva() {
+    const serviceId = getUrlId()
+    window.location.href = `turnos.html?id=${serviceId}`;
+}
