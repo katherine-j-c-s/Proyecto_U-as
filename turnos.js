@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
     ////////////////////////////////////////////////////////////calendario////////////////////////////////////////////////////
 // Crear una instancia de Date
 const today = new Date();
-today.setDate(25)
 const calendarioGrid = document.querySelector('.calendario-grid');
 // optenemos el primer y ultimo día del mes actual
 const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
@@ -61,7 +60,6 @@ if (diasRestantes <= 7) {
     // El último día del próximo mes
     let lastDayNextMonth = new Date(firstDayNextMonth.getFullYear(), firstDayNextMonth.getMonth() + 1, 0);
     cantDiasMes = lastDayNextMonth.getDate()
-    console.log(nextMonth);
 }
 //si el dia no comenzo un domingo, entonces debemos buscar cuantos dias tenia el mes antior asi rellenamos
 if (startDayOfWeek != 0) {
@@ -91,7 +89,6 @@ if (startDayOfWeek != 0) {
             disCalendarioSigMes++;
         }else if (diasCalendario > cantDiasMes && diasRestantes <= 7){
             if(disCalendarioSigMes > cantDiasMes && disCalendarioSigMes !== 31){
-                console.log(disCalendarioSigMes,cantDiasMes);
                 disCalendarioSigMes = 1;
                 terminoOtroMes = true
             }

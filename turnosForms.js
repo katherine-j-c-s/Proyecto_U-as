@@ -15,11 +15,10 @@ function sendForm(e) {
     let inputTelefono = document.querySelector("input#telefono")
 
     let errorInputsTitle = document.getElementById("inputsTitle"); 
-    let errorInputs = document.getElementsByTagName("input"); 
 
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     //efectos de error
-
+    console.log(horario);
     //////////horarios
     if (!horario) {
         const selectDias = document.createElement('p');
@@ -50,12 +49,14 @@ function sendForm(e) {
     }
 
     if (inputEmail.value === "" || !regex.test(inputEmail.value)) {
+        console.log(inputEmail.value === "" || !regex.test(inputEmail.value));
         inputsValidos = false;
         inputEmail.classList.add("errorInputs");
     } else {
         inputEmail.classList.remove("errorInputs");
     }
-    if (inputTelefono.value === "" || isNaN(inputTelefono.value)) {
+    if (inputTelefono.value === "" || Number(inputTelefono.value) < 0) {
+        console.log(inputTelefono.value === "" || Number(inputTelefono.value) < 0);
         inputsValidos = false;
         inputTelefono.classList.add("errorInputs");
     } else {
@@ -65,13 +66,18 @@ function sendForm(e) {
     // Mostrar mensaje de error si algún input es inválido
     if (!inputsValidos) {
         errorInputsTitle.classList.add("error");
-    } else {
+    }else {
+        errorInputsTitle.classList.remove("error");
+    }
+    
+    if(horario !== null && inputsValidos){
         errorInputsTitle.classList.remove("error");
         // Aquí puedes proceder con el envío del formulario si todos los datos son válidos
         alert("turno reservado")
         setTimeout(()=>{
-            window.location.href = "home.html";
-        },2000)
+            agendarReserva()
+        },1000)
+
         console.log("Todos los datos son válidos. Proceder con el envío del formulario.");
     }
     
