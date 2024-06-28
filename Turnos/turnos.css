@@ -163,14 +163,23 @@ button:hover{
 }
 .calendario-grid div {
     padding: 20px;
+    border-radius: 40px;
     text-align: center;
 }
 /*afectos para usar*/
 .activo {
+    cursor: pointer;
     background-color: #EF0483;
     color: white;
     font-weight: bold;
-    border-radius: 40px;
+    transition: all 0.2s;
+}
+.activoHover {
+    cursor: pointer;
+    background-color: #EF0483;
+    color: white;
+    font-weight: bold;
+    transition: all 0.2s;
 }
 .desactivo {
     color: #ccc;

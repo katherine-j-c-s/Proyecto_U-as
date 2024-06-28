@@ -135,6 +135,15 @@ document.addEventListener('DOMContentLoaded', function() {
             dayDiv.addEventListener('click', function() {
                 seleccionarDia(dayDiv);
             });
+            // Agregar evento de mouseenter (cuando el cursor entra en el elemento)
+            dayDiv.addEventListener('mouseenter', function() {
+                dayDiv.classList.add('activoHover');
+            });
+
+            // Agregar evento de mouseleave (cuando el cursor sale del elemento)
+            dayDiv.addEventListener('mouseleave', function() {
+                dayDiv.classList.remove('activoHover');
+            });
         }
     }
     //funcion para mostrar en el calendario que el dia fue seleccionado y le pasa a mostrarHorasDisponibles el dia
@@ -176,7 +185,9 @@ document.addEventListener('DOMContentLoaded', function() {
         estadoOpcion(opcionesHorarios,'#horariosLista.opciones-box .opcion.activado')
         
         let horarioError = document.querySelector("#textError .error")
+        let calendarioSubTitulo = document.querySelector("#calendarioText.error")
         horarioError.textContent = "";
+        calendarioSubTitulo.classList.remove("error");
     }
     //funcion para buscar y agregar estado activado o quitarlo en la seleccion de opciones
     function estadoOpcion(tipoOpcion,actualActivado) {
@@ -187,7 +198,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (activadoActual) {
                     activadoActual.classList.remove('activado');
                 }
-
+                if (actualActivado = '#horariosLista.opciones-box .opcion.activado') {
+                    let calendarioSubTitulo = document.querySelector("#horario.error")
+                    calendarioSubTitulo.classList.remove("error");
+                }
                 // Agregamos la clase activado al elemento de servicio que fue clicado
                 opcion.classList.add('activado');
             });
