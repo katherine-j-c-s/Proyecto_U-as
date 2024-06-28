@@ -186,8 +186,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let horarioError = document.querySelector("#textError .error")
         let calendarioSubTitulo = document.querySelector("#calendarioText.error")
-        horarioError.textContent = "";
-        calendarioSubTitulo.classList.remove("error");
+        if (horarioError) {
+            horarioError.textContent = "";
+            calendarioSubTitulo.classList.remove("error");
+        }
     }
     //funcion para buscar y agregar estado activado o quitarlo en la seleccion de opciones
     function estadoOpcion(tipoOpcion,actualActivado) {
@@ -200,7 +202,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 if (actualActivado = '#horariosLista.opciones-box .opcion.activado') {
                     let calendarioSubTitulo = document.querySelector("#horario.error")
-                    calendarioSubTitulo.classList.remove("error");
+                    if (calendarioSubTitulo) {
+                        calendarioSubTitulo.classList.remove("error");
+                    }
                 }
                 // Agregamos la clase activado al elemento de servicio que fue clicado
                 opcion.classList.add('activado');
