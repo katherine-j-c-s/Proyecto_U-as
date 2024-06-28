@@ -45,7 +45,7 @@ header nav a:hover {
 
 /* HOME */
 #home {
-    background-image: url('./img/fondoHome.png');
+    background-image: url('../img/fondoHome.png');
     background-size: cover;
     background-position: bottom;
     height: 100vh;

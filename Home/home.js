@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const serviceId = parseInt(event.currentTarget.getAttribute('data-id'));
 
         // Redirigir a la página de detalles.html y pasar los datos
-        window.location.href = `detalles.html?id=${serviceId}`;
+        window.location.href = `../Detalles/detalles.html?id=${serviceId}`;
     }
 
     // Agregar un evento de clic a cada servicio

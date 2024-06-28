@@ -14,10 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('precio').textContent = servicio.precio;
         document.getElementById('detalle').textContent = servicio.detalle;
 
-        // Actualizar las imágenes del carrusel
+        //toma todas las imagenes del carrouser
         const slides = document.querySelectorAll('.carousel .slide img');
         
         slides.forEach((img, index) => {
+            // Actualizar las imágenes del carrusel con la data de servicios
             img.src = servicio.imagenes[index];
         });
     }
@@ -32,5 +33,5 @@ function getUrlId() {
 }
 function agendarReserva() {
     const serviceId = getUrlId()
-    window.location.href = `turnos.html?id=${serviceId}`;
+    window.location.href = `../Turnos/turnos.html?id=${serviceId}`;
 }
