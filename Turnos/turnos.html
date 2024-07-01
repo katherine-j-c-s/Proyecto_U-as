@@ -12,83 +12,92 @@
         <div class="encabezado">
             <a href="../Home/home.html#home">Inicio</a>
         </div>
-        <nav>
+        <button id="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav">
+            <a href="../Home/home.html#home">Inicio</a>
             <a href="../Home/home.html#services">Servicios</a>
             <a href="../Home/home.html#about">Sobre Mí</a>
             <a href="../Home/home.html#contact">Contacto</a>
         </nav>
     </header>
-    <aside id="reservaTurno">
-        <div class="container-Opciones">
-            <h1 class="titulo">Su Servicio</h1>
-            <ul class="opciones-box">
-                <li class="opcion" id="0" >esculpidas soft gel</li>
-                <li class="opcion" id="1">esmaltado semipermamente</li>
-                <li class="opcion" id="2">kapping con poligel</li>
-                <li class="opcion" id="3">dipping con acrilico</li>
-                <li class="opcion" id="4">kapping base niveladora</li>
-            </ul>
-        </div>
-        <div class="container-Opciones">
-            <h1 class="titulo" id="horario">Horario disponible por dia</h1>
-            <div id="textError"></div>
-            <ul class="opciones-box" id="horariosLista">
-                <!-- Las horas disponibles se agregarán aquí dinámicamente -->
-            </ul>
-        </div>
-        <div class="container-Opciones">
-            <h1 class="titulo" id="inputsTitle">ahora llene los siguientes datos</h1>
-            <form>
-                <input id="nombre" placeholder="nombre" type="text">
-                <input id="apellido" placeholder="apellido" type="text">
-                <input id="email" placeholder="email" type="email">
-                <input id="telefono" placeholder="telefono" type="number">
-            </form>
-        </div>
-        <div class="container-Opciones">
-            <div class="monto">
-                <h1 class="titulo">tu turno esta en este monto:</h1>
-                <h1 class="precio">8200$</h1>
+    <div class="content-wrapper">
+        <aside id="reservaTurno">
+            <div class="container-Opciones">
+                <h1 class="titulo">Su Servicio</h1>
+                <ul class="opciones-box">
+                    <li class="opcion" id="0" >esculpidas soft gel</li>
+                    <li class="opcion" id="1">esmaltado semipermamente</li>
+                    <li class="opcion" id="2">kapping con poligel</li>
+                    <li class="opcion" id="3">dipping con acrilico</li>
+                    <li class="opcion" id="4">kapping base niveladora</li>
+                </ul>
             </div>
-            <div class="notareserva">
-                <p>para completar con la reserva del turno, será necesario que pague una seña del 50%</p>
+            <div class="container-Opciones">
+                <h1 class="titulo" id="horario">Horario disponible por dia</h1>
+                <div id="textError"></div>
+                <ul class="opciones-box" id="horariosLista">
+                    <!-- Las horas disponibles se agregarán aquí dinámicamente -->
+                </ul>
             </div>
-            <p class="metodoPago">metodo de pago SOLO es por mercado pago</p>
-            <button onclick="sendForm()">pagar</button>
-        </div>
-    </aside>
-    <section id="calendario">
-        <h1>vamos a sacar su turno</h1>
-        <div class="inline"></div>
-        <p id="calendarioText">seleccione el dia para sacar el turno</p>
-        <div class="agenda">
-            <!-- Días de la semana -->
-            <div class="semana-header">
-                <div>Dom</div>
-                <div>Lun</div>
-                <div>Mar</div>
-                <div>Mié</div>
-                <div>Jue</div>
-                <div>Vie</div>
-                <div>Sáb</div>
+            <div class="container-Opciones">
+                <h1 class="titulo" id="inputsTitle">ahora llene los siguientes datos</h1>
+                <form>
+                    <input id="nombre" placeholder="nombre" type="text">
+                    <input id="apellido" placeholder="apellido" type="text">
+                    <input id="email" placeholder="email" type="email">
+                    <input id="telefono" placeholder="telefono" type="number">
+                </form>
             </div>
-            <!-- Calendario 7x5 -->
-            <div class="calendario-grid">
-                <!-- Aquí se insertarán los días con JavaScript -->
+            <div class="container-Opciones">
+                <div class="monto">
+                    <h1 class="titulo">tu turno esta en este monto:</h1>
+                    <h1 class="precio">8200$</h1>
+                </div>
+                <div class="notareserva">
+                    <p>para completar con la reserva del turno, será necesario que pague una seña del 50%</p>
+                </div>
+                <p class="metodoPago">metodo de pago SOLO es por mercado pago</p>
+                <button id="pagobtn" onclick="sendForm()">pagar</button>
             </div>
-        </div>
-        <div class="container-vectores-turnos">
-            <div class="box-vector-turnos">
-                <a href="https://www.instagram.com/cami_.cruz_?igsh=ajVwNnZoNW9iZmcw" target="_blank"><img src="../img/instagram.png" alt="Instagram"></a>
+        </aside>
+        <section id="calendario">
+            <h1>vamos a sacar su turno</h1>
+            <div class="inline"></div>
+            <p id="calendarioText">seleccione el dia para sacar el turno</p>
+            <div class="agenda">
+                <!-- Días de la semana -->
+                <div class="semana-header">
+                    <div>Dom</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mié</div>
+                    <div>Jue</div>
+                    <div>Vie</div>
+                    <div>Sáb</div>
+                </div>
+                <!-- Calendario 7x5 -->
+                <div class="calendario-grid">
+                    <!-- Aquí se insertarán los días con JavaScript -->
+                </div>
             </div>
-            <div class="box-vector-turnos" >
-                <a href="https://www.facebook.com/lucianacamila.cruz?mibextid=ZbWKwL" target="_blank"><img src="../img/facebook.png" alt="Facebook"></a>
+            <div class="container-vectores-turnos">
+                <div class="box-vector-turnos">
+                    <a href="https://www.instagram.com/cami_.cruz_?igsh=ajVwNnZoNW9iZmcw" target="_blank"><img src="../img/instagram.png" alt="Instagram"></a>
+                </div>
+                <div class="box-vector-turnos" >
+                    <a href="https://www.facebook.com/lucianacamila.cruz?mibextid=ZbWKwL" target="_blank"><img src="../img/facebook.png" alt="Facebook"></a>
+                </div>
+                <div class="box-vector-turnos" >
+                    <a href="https://wa.me/message/BBAXZTRSVNC5I1" target="_blank"><img src="../img/whatsApp.png" alt="WhatsApp"></a>
+                </div>
             </div>
-            <div class="box-vector-turnos" >
-                <a href="https://wa.me/message/BBAXZTRSVNC5I1" target="_blank"><img src="../img/whatsApp.png" alt="WhatsApp"></a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    <script src="../Home/home.js"></script>
     <script src="./turnos.js"></script>
     <script src="./turnosForms.js"></script>
     <script src="../Data/turnosData.js"></script>
