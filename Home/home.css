@@ -1,94 +1,118 @@
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    color: #333; /* Color principal de texto */
+    color: #333;
 }
-/* HEADER */
+
+/* Header and Navigation */
 header {
     position: fixed;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     z-index: 10;
-    background-color: #75019c; /* Fondo del encabezado */
+    background-color: #75019c;
     width: 100%;
     height: auto;
     top: 0;
-    padding: 10px 0;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra en la parte inferior */
-    border-bottom: 1px solid #ccc; /* Borde delgado en la parte inferior */
-}
-.encabezado a{
-    color: white;
-    text-decoration: none;
-    margin: 0 0 0 10px;
-}
-header nav {
-    text-align: right;
-    margin: 10px 30px;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ccc;
 }
 
-header nav a {
+.encabezado a {
+    color: white;
+    text-decoration: none;
+}
+
+#main-nav {
+    display: flex;
+}
+
+#main-nav a {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    margin: 0 5px;
     font-size: 18px;
     transition: all 0.3s ease;
 }
 
-header nav a:hover {
-    color: #E859D9; /* Color de fondo al pasar el mouse */
+#main-nav a:hover {
+    color: #E859D9;
 }
 
-/* HOME */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Home */
 #home {
     background-image: url('../img/fondoHome.png');
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     height: 100vh;
 }
-/* SERVICES*/
-#services{
+
+/* Services */
+#services {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #74019C;
     width: 100%;
+    padding: 20px 0;
 }
-#servicesBox{
+
+#servicesBox {
     width: 90%;
+    max-width: 1200px;
     background-color: #00000078;
-    margin: -150px 0 150px;
+    margin: -100px 0 100px;
     border-radius: 30px;
     text-align: left;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
-#box-services-card{
+
+#box-services-card {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
     margin: 0 0 20px 0;
 }
 
-/* Estilos para las tarjetas de servicios */
 .service-card {
-    position: relative; /* Asegura que el texto se superponga sobre la imagen */
+    position: relative;
     display: inline-block;
     cursor: pointer;
-    width: 250px;
+    width: calc(33.33% - 40px);
+    min-width: 250px;
     height: 250px;
     margin: 20px;
     text-align: center;
     border-radius: 10px;
-    overflow: hidden; /* Para ocultar partes de la imagen que se salgan de los límites */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -99,19 +123,19 @@ header nav a:hover {
 .service-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    object-fit: cover;
     border-top-right-radius: 10px;
 }
 
-.textBoxCard{
+.textBoxCard {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 1; /* Opacidad inicial */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
-    transition: opacity 0.3s ease; /* Transición de opacidad */
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,69 +145,95 @@ header nav a:hover {
 }
 
 .service-card:hover .card-overlay {
-    opacity: 0; /* Oculta el fondo oscuro al hacer hover */
+    opacity: 0;
 }
 
 .service-card h3 {
-    color: #fff; /* Color del título */
+    color: #fff;
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .service-card p {
-    color: #fff; /* Color del texto */
+    color: #fff;
     font-size: 24px;
-    font-family: "Playwrite US Trad", cursive; /* Fuente personalizada */
+    font-family: "Playwrite US Trad", cursive;
     margin: 0;
     text-align: center;
-    font-weight:100;
+    font-weight: 100;
     line-height: 1.4;
 }
-/*Estilo para los titulos de services y about*/
-.text-box{
+
+/* Text box styles */
+.text-box {
     display: flex;
     align-items: baseline;
     align-self: flex-start;
     margin: 20px 0 0 100px;
+    flex-wrap: wrap;
 }
-.text-box h2{
-    font-size:36px;
+
+.text-box h2 {
+    font-size: 36px;
     font-weight: bolder;
     text-transform: uppercase;
     color: white;
     margin: 10px;
 }
-.text-box p{
+
+.text-box p {
     font-size: 24px;
-    color: #E859D9;         
+    color: #E859D9;
     font-family: "Playwrite US Trad", cursive;
 }
-/*SOBRE MI*/
-#about{
+
+/* About */
+#about {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 20px 0;
 }
-.about{
+
+.about {
     width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
-.about-image{
-    width: fit-content;
-    height: fit-content;
-    margin-bottom: -6px;
+
+.about-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 20px;
 }
-.about-me{
-    width: 85%;
+
+.about-image img {
+    width: 100%;
+    height: auto;
+}
+
+.about-me {
+    width: 100%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-/*CONTACTO*/
-#contact{
+
+.about-me p {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Contact */
+#contact {
     width: 100%;
     display: flex;
     background-color: #74019C;
@@ -193,20 +243,157 @@ header nav a:hover {
     align-items: center;
     position: relative;
 }
-.box-vector{
+
+.box-vector {
     background-color: #EF0483;
     width: fit-content;
     padding: 20px;
     border-radius: 86px;
+    margin: 10px;
 }
-.container-vectores{
+
+.container-vectores {
     display: flex;
     justify-content: space-around;
-    width: 30%;
+    width: 100%;
+    max-width: 500px;
     margin: 5vh auto 0;
+    flex-wrap: wrap;
 }
-.container-img-contact{
+
+.container-img-contact {
     position: absolute;
-    right: 0;
     bottom: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.container-img-contact img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    #main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        background-color: #75019c;
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #main-nav.active {
+        display: flex;
+    }
+
+    #main-nav a {
+        text-align: center;
+        padding: 15px 20px;
+    }
+
+    /* Animation for menu toggle */
+    #menu-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    #menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    /* Animation for menu toggle */
+    #menu-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    #menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    header {
+        flex-direction: row;
+        padding: 0;
+        align-items: center;
+    }
+
+    header nav {
+        margin: 10px 0;
+    }
+
+    .text-box {
+        margin: 20px 0;
+        justify-content: center;
+    }
+
+    #servicesBox {
+        margin: -50px 0 50px;
+    }
+
+    .service-card {
+        width: calc(50% - 40px);
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image, .about-me {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .esmalteImg{
+        display: none;
+    }
+    .container-img-contact{
+        display: none;
+    }
+    header nav a {
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+
+    .service-card {
+        width: calc(100% - 40px);
+    }
+
+    .text-box h2 {
+        font-size: 28px;
+    }
+
+    .text-box p {
+        font-size: 20px;
+    }
+    .box-vector {
+        padding: 10px;
+        border-radius: 90px;
+        margin: 10px;
+    }
+    .box-vector a img {
+        height: 50px;
+        width: 50px;
+    }
+
 }
