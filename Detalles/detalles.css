@@ -1,12 +1,25 @@
-#boxDetalles{
-    width: 100%;
-    height: 100vh;
-    display: flex;
+/* Import home.css for header styles */
+@import url('../Home/home.css');
+
+/* Responsive styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
-/*SECTION DE IMAGENES*/
-#box-carrousel{
+
+#boxDetalles {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 45px; /* Account for fixed header */
+}
+
+/* SECTION DE IMAGENES */
+#box-carrousel {
+    width: 100%;
     position: relative;
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,8 +27,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    padding: 20px 0;
 }
-.darkBackground{
+
+.darkBackground {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -24,16 +39,16 @@
     background-color: #0000008c;
 }
 
-/*ESTILOS PARA EL CAROUSER DE IMAGENES*/
+/* ESTILOS PARA EL CAROUSEL DE IMAGENES */
 .carousel {
     position: relative;
-    width: 50%;/* Ancho del carrusel */
-    max-width: 400px;/* Ancho máximo del carrusel */
+    width: 90%;
+    max-width: 400px;
     overflow: hidden;
-    margin-top: 150px;
+    margin-top: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-/*estos son los estilos que se van a ir agregando y quitanto en la parte de js para que aparezca o no la imagen*/
+
 .slide {
     display: none;
 }
@@ -47,20 +62,21 @@
     height: auto;
     display: block;
 }
-/*aqui personalizamos los botones de next y prev*/
+
 .prev-btn, .next-btn {
     position: absolute;
-    background-color: #007bff00;
+    background-color: transparent;
     top: 50%;
+    transform: translateY(-50%);
     border: 0;
-    padding: 0;
+    padding: 10px;
     cursor: pointer;
     appearance: none;
     transition: 0.3s;
 }
 
 .prev-btn:hover, .next-btn:hover {
-    top: 49%;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .prev-btn {
@@ -70,7 +86,7 @@
 .next-btn {
     right: 10px;
 }
-/*estos indicadores mostraran en que imagen se encuentra*/
+
 .carousel-indicators {
     display: flex;
     position: relative;
@@ -91,122 +107,174 @@
 .indicator.active {
     background-color: #E859D9;
 }
-/*SECTION DEL TEXTO DE DETALLE*/
-#box-detalle{
-    width: 50%;
+
+/* SECTION DEL TEXTO DE DETALLE */
+#box-detalle {
+    width: 100%;
     background-image: url(../img/fondo_servicios_5.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    padding: 20px 0;
 }
-/*estilo del titulo*/
-.title{
+
+.title {
     width: 100%;
     position: relative;
-    margin-top: 100px;
     padding: 30px 0;
     text-align: center;
     background-color: #0000008c;
 }
-.title p{
-    font-size: 24px;
+
+.title p {
+    font-size: 18px;
     margin: 0;
-    bottom: -5px;
-    right: 40%;
-    position: absolute;
     color: white;         
     font-family: "Playwrite US Trad", cursive;
 }
-.title h2{
-    font-size: 40px;
-    top: 0px;
-    position: absolute;
+
+.title h2 {
+    font-size: 32px;
     color: white;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: auto;
+    margin: 0 0 10px 0;
     text-transform: uppercase;
     font-weight: 900;
 }
-/*estilo del texto de detalle*/
-.box-detalle-texto{
-    width: 45%;
+
+.box-detalle-texto {
+    width: 90%;
+    max-width: 600px;
     background-color: white;
-    margin: 70px auto;
+    margin: 20px auto;
     border-radius: 20px;
-    padding: 5px 44px 15px;
+    padding: 20px;
 }
-.box-detalle-texto h2{
+
+.box-detalle-texto h2 {
     font-weight: 900;
+    font-size: 24px;
 }
-.box-detalle-texto h4{
+
+.box-detalle-texto h4 {
     color: #E859D9;         
     font-family: "Playwrite US Trad", cursive;
+    font-size: 18px;
 }
-/*SECTION AGENDAR TURNO*/
-#reservaTurno{
+
+/* SECTION AGENDAR TURNO */
+#reservaTurno {
     width: 100%;
     background-color: #74019C;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 0;
 }
-.agenda{
+
+.agenda {
     display: flex;
-    margin: 50px 0 20px;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     color: white;
 }
-.agenda h2{
+
+.agenda h2 {
     text-transform: uppercase;
     font-weight: 900;
-    margin: 0;
+    margin: 10px 0;
+    font-size: 28px;
 }
-.agenda h4{
+
+.agenda h4 {
     color: #E859D9;        
-    margin: 0 0 20px 0; 
+    margin: 0 0 10px 0; 
     font-weight: 200;
     font-family: "Playwrite US Trad", cursive;
+    font-size: 20px;
 }
-.agenda p{
+
+.agenda p {
     font-weight: 100;
-    font-size: 17px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.902);
+    margin-bottom: 20px;
 }
-button{
+
+button {
     background-color: #EF0483;
     padding: 12px 25px;
     border: none;
     border-radius: 22px;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
     transition: 0.3s;
     cursor: pointer;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
-.btnReserva:hover{
+
+.btnReserva:hover {
     background-color: #E859D9;
     color: rgb(5, 5, 5);
 }
-.box-vector-detalles{
+
+.box-vector-detalles {
     background-color: #EF0483;
     padding: 10px;
     margin: 5px;
     transition: 0.3s;
     border-radius: 40px;
 }
-.box-vector-detalles:hover{
+
+.box-vector-detalles:hover {
     background-color: #E859D9;
-    color: rgb(5, 5, 5);
 }
-.box-vector-detalles img{
+
+.box-vector-detalles img {
     width: 30px;
     height: 30px;
 }
-.container-vectores-detalles{
+
+.container-vectores-detalles {
     display: flex;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    #boxDetalles {
+        flex-direction: row;
+        padding-top: 60px;
+    }
+
+    #box-carrousel, #box-detalle {
+        width: 50%;
+    }
+
+    .agenda {
+        flex-direction: row;
+    }
+
+    .agenda > * {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .box-detalle-texto {
+        width: 70%;
+    }
+
+    .title h2 {
+        font-size: 40px;
+    }
+
+    .title p {
+        font-size: 24px;
+    }
 }

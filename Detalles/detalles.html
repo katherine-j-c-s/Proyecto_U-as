@@ -16,8 +16,14 @@
             <div class="encabezado">
                 <a href="../Home/home.html#home">Inicio</a>
             </div>
-            <nav>
-                <a href="../Home/home.html#home">Servicios</a>
+            <button id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="main-nav">
+                <a href="../Home/home.html#home">Inicio</a>
+                <a href="../Home/home.html#services">Servicios</a>
                 <a href="../Home/home.html#about">Sobre Mí</a>
                 <a href="../Home/home.html#contact">Contacto</a>
             </nav>
@@ -60,7 +66,7 @@
     </section>
     <section id="reservaTurno">
         <div class="agenda">
-            <img src="../img/esmaltedetalle.png" alt="esmalte">
+            <img class="esmalteImg" src="../img/esmaltedetalle.png" alt="esmalte">
             <div>
                 <h2>agenda</h2>
                 <h4>Abierta</h4>
@@ -68,7 +74,7 @@
                 <p>Ven a ponerte aun mas hermosa</p>
                 <button class="btnReserva" id="btnReserva" onclick="agendarReserva()">Reservar turno</button>
             </div>
-            <img src="../img/esmaltedetalle.png" alt="esmalte">
+            <img class="esmalteImg" src="../img/esmaltedetalle.png" alt="esmalte">
         </div>
         <div class="container-vectores-detalles">
             <div class="box-vector-detalles">
@@ -85,5 +91,6 @@
     <script src="../Data/detallesDataServicios.js"></script>
     <script src="detalles.js"></script>
     <script src="detallesCarrousel.js"></script>
+    <script src="../Home/home.js"></script>
 </body>
 </html>
